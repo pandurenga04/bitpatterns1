@@ -11,7 +11,7 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">About BIT PATTERNS</h1>
               <p className="text-gray-300 text-lg mb-6">
                 We are a team of passionate developers, designers, and digital strategists dedicated to creating
@@ -36,7 +36,9 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="lg:w-1/2 relative">
+
+            {/* ✅ Updated width for responsiveness */}
+            <div className="w-full lg:w-1/2 relative">
               <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-violet-500/20 rounded-lg"></div>
                 <Image
@@ -62,7 +64,6 @@ export default function AboutPage() {
             title="Our Mission & Vision"
             subtitle="We're driven by a clear purpose and ambitious goals for the future."
           />
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-900/30 backdrop-blur-sm p-8 rounded-lg border border-gray-800">
               <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mb-6">
@@ -75,7 +76,6 @@ export default function AboutPage() {
                 client-focused development.
               </p>
             </div>
-
             <div className="bg-gray-900/30 backdrop-blur-sm p-8 rounded-lg border border-gray-800">
               <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mb-6">
                 <Lightbulb className="text-violet-500" size={32} />
@@ -95,7 +95,6 @@ export default function AboutPage() {
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-4">
           <SectionHeading title="Our Core Values" subtitle="These principles guide everything we do at BIT PATTERNS." />
-
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gray-900/30 backdrop-blur-sm p-6 rounded-lg border border-gray-800 text-center">
               <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -107,7 +106,6 @@ export default function AboutPage() {
                 advancements.
               </p>
             </div>
-
             <div className="bg-gray-900/30 backdrop-blur-sm p-6 rounded-lg border border-gray-800 text-center">
               <div className="w-16 h-16 bg-violet-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="text-violet-500" size={32} />
@@ -117,7 +115,6 @@ export default function AboutPage() {
                 We build strong, collaborative relationships with our clients, treating their goals as our own.
               </p>
             </div>
-
             <div className="bg-gray-900/30 backdrop-blur-sm p-6 rounded-lg border border-gray-800 text-center">
               <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Heart className="text-green-500" size={32} />
@@ -135,7 +132,6 @@ export default function AboutPage() {
       <section className="py-20 bg-black">
         <div className="container mx-auto px-4">
           <SectionHeading title="Meet Our Team" subtitle="The talented individuals behind BIT PATTERNS's success." />
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
