@@ -42,7 +42,7 @@ export default function AboutPage() {
               <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-violet-500/20 rounded-lg"></div>
                 <Image
-                  src="https://media.istockphoto.com/id/1530256492/vector/software-development-concept-laptop-with-open-screen-hanging-over-desk-coding-or-programming.jpg?s=612x612&w=0&k=20&c=LLywtLnfu5FETIvkaFjy_xcHnaIGmaKZYxcPKAoyPcA="
+                  src="https://globalfocusmagazine.com/wp-content/uploads/2020/02/Engaging_with_technology-1536x1024.jpg"
                   alt="BIT PATTERN Team"
                   fill
                   className="object-cover rounded-lg"
