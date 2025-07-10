@@ -132,7 +132,7 @@ Submission Date: ${new Date().toLocaleDateString()}
                       href="mailto:support@bitpattern.com"
                       className="text-blue-400 hover:text-blue-300 transition-colors"
                     >
-                      support@bitpattern.com
+                      support@bitpatterns.in
                     </a>
                   </div>
                 </div>
