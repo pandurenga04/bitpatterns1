@@ -10,7 +10,7 @@ import Chatbot from "@/components/chatbot"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "BIT PATTERNS | Custom Digital Solutions",
+  title: "BIT PATTERNS | AI & Digital Solutions",
   description: "Transforming Ideas Into Software Realities",
   icons: {
     icon: "/favicon.png",
