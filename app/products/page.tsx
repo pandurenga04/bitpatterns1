@@ -289,11 +289,27 @@ Date: ${new Date().toLocaleDateString()}
             {[
               {
                 name: "Govintha sutharsan",
-                position: "Head, FinTech Innovations",
+                position: "Head, SSF Mills",
                 quote:
                   "BIT PATTERNS delivered an exceptional solution that exceeded our expectations. Their technical expertise and attention to detail were impressive.",
                 image:
                   "https://pnghq.com/wp-content/uploads/pnghq.com-user-icon-cutout-png-clipart-images.png",
+              },
+              {
+                name: "Mr.Kannan",
+                position: "Founder, SSF Mills",
+                quote:
+                  "Bit Patterns transformed our vision into a stunning digital reality with unmatched precision and creativity!.",
+                image:
+                  "https://pnghq.com/wp-content/uploads/pnghq.com-user-icon-cutout-png-clipart-images.png",
+              },
+              {
+                name: "Mrs.Sundhari",
+                position: "Manager, SSF Mills",
+                quote:
+                  "Partnering with Bit Patterns has streamlined our operations and elevated our digital strategy beyond expectations.",
+                image:
+                  "https://www.clker.com/cliparts/D/4/B/O/k/2/female-user-icon-bright-blue-md.png",
               },
             ].map((testimonial, index) => (
               <div key={index} className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
