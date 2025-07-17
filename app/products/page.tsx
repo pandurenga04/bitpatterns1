@@ -288,28 +288,12 @@ Date: ${new Date().toLocaleDateString()}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Guru Moorthy",
-                position: "CTO, FinTech Innovations",
+                name: "Govintha sutharsan",
+                position: "Head, FinTech Innovations",
                 quote:
                   "BIT PATTERNS delivered an exceptional solution that exceeded our expectations. Their technical expertise and attention to detail were impressive.",
                 image:
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
-              },
-              {
-                name: "Sundari Sutharsan",
-                position: "CEO, Health Solutions Inc.",
-                quote:
-                  "Working with BIT PATTERNS was a game-changer for our business. They understood our needs and delivered a product that transformed our operations.",
-                image:
-                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80",
-              },
-              {
-                name: "Ramm",
-                position: "Product Manager, E-Commerce Plus",
-                quote:
-                  "The mobile app developed by BIT PATTERNS has significantly improved our customer engagement and sales. Their team was professional and responsive throughout.",
-                image:
-                  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+                  "https://pnghq.com/wp-content/uploads/pnghq.com-user-icon-cutout-png-clipart-images.png",
               },
             ].map((testimonial, index) => (
               <div key={index} className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
