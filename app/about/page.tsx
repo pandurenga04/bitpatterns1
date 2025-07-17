@@ -138,7 +138,7 @@ export default function AboutPage() {
                 name: "Pandurenga",
                 role: "Founder",
                 image:
-                  "https://media.licdn.com/dms/image/v2/D5603AQEHIpYgO_1K2A/profile-displayphoto-shrink_800_800/B56ZadjPqbHsAc-/0/1746399992410?e=1752710400&v=beta&t=67mpJTfRmSTf4IIIZoGy4P_e8mWIIvBc_mg1kuBkcac",
+                  "https://media.licdn.com/dms/image/v2/D5603AQEHIpYgO_1K2A/profile-displayphoto-shrink_400_400/B56ZadjPqbHsAg-/0/1746399992410?e=1758153600&v=beta&t=kiXfF5Cq0HaljE5KCKqVLthERMwPRr_ajDEmGnheas0",
               },
               {
                 name: "Ranjith Kumar",
@@ -149,13 +149,13 @@ export default function AboutPage() {
                 name: "Palani Murugan",
                 role: "Founder",
                 image:
-                  "https://media.licdn.com/dms/image/v2/D5603AQGHHcDCYYfGww/profile-displayphoto-shrink_800_800/B56ZTk.4rvGoAc-/0/1739008478715?e=1752710400&v=beta&t=Wp42Hao--tM6of4LTlarFKsr9Cqgo1949_kdBU9mnT8",
+                  "https://media.licdn.com/dms/image/v2/D5603AQGHHcDCYYfGww/profile-displayphoto-shrink_400_400/B56ZTk.4rvGoAg-/0/1739008478715?e=1758153600&v=beta&t=Q8uuM_6MxMfgwiZ5XCZrkeqf5uvnweh2UDBctEtNIks",
               },
               {
                 name: "Neeleshwar",
                 role: "Co-Founder & Tech Head",
                 image:
-                  "https://media.licdn.com/dms/image/v2/D5603AQFLsgDh9pnmsg/profile-displayphoto-shrink_400_400/B56ZUJNg8lGUAg-/0/1739616297998?e=1752710400&v=beta&t=ThaDLtDuAz4pJbaxKSFIqh3rhgo7ry5QndlS2juGw-8",
+                  "https://media.licdn.com/dms/image/v2/D5603AQFLsgDh9pnmsg/profile-displayphoto-shrink_400_400/B56ZUJNg8lGUAg-/0/1739616297998?e=1758153600&v=beta&t=65RZj_MHX37aIxfFyyhF0DPob62fi4g1Uuc1W2a8m4s",
               },
             ].map((member, index) => (
               <div
