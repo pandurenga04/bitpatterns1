@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MessageCircle, X, Send, Bot, User } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
 
 interface Message {
   id: number
@@ -123,112 +122,113 @@ export default function Chatbot() {
 
   return (
     <>
+      <style jsx>{`
+        .chatbot-window {
+          transition: all 0.3s ease-in-out;
+          transform: ${isOpen ? 'translateY(0)' : 'translateY(20px)'};
+          opacity: ${isOpen ? 1 : 0};
+          visibility: ${isOpen ? 'visible' : 'hidden'};
+        }
+        .message {
+          transition: all 0.3s ease;
+          transform: translateY(10px);
+          opacity: 0;
+        }
+        .message-visible {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        .toggle-button {
+          transition: all 0.2s ease;
+        }
+        .toggle-button:hover {
+          transform: scale(1.1);
+        }
+        .toggle-button:active {
+          transform: scale(0.95);
+        }
+        .send-button:hover {
+          transform: scale(1.1);
+        }
+        .send-button:active {
+          transform: scale(0.95);
+        }
+      `}</style>
+
       {/* Chatbot Toggle Button */}
-      <motion.div
-        className="fixed bottom-6 right-6 z-50"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
+      <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white shadow-2xl transition-all duration-300"
+          className="toggle-button w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white shadow-xl"
           size="icon"
         >
-          <motion.div
-            animate={{ rotate: isOpen ? 90 : 0 }}
-            transition={{ duration: 0.3 }}
-          >
+          <span className="transition-transform duration-300" style={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
             {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
-          </motion.div>
+          </span>
         </Button>
-      </motion.div>
+      </div>
 
       {/* Chatbot Window */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 w-96 max-w-[90vw] h-[28rem] bg-gray-800 border border-gray-700 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
-          >
-            {/* Header */}
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 rounded-t-2xl flex items-center gap-3">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ duration: 0.3 }}
+      <div
+        className="chatbot-window fixed bottom-24 right-6 w-96 max-w-[90vw] h-[28rem] bg-gray-800 border border-gray-700 rounded-2xl shadow-xl z-50 flex flex-col overflow-hidden"
+      >
+        {/* Header */}
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 rounded-t-2xl flex items-center gap-3">
+          <Bot size={28} />
+          <div>
+            <h3 className="font-bold text-lg">BIT PATTERNS Assistant</h3>
+            <p className="text-xs opacity-80">Always here to help</p>
+          </div>
+        </div>
+
+        {/* Messages */}
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-900/50">
+          {messages.map((message) => (
+            <div
+              key={message.id}
+              className={`message message-visible flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
+            >
+              <div
+                className={`max-w-[75%] p-3 rounded-xl ${
+                  message.sender === "user"
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-700 text-gray-100 border border-gray-600"
+                } shadow-md`}
               >
-                <Bot size={28} />
-              </motion.div>
-              <div>
-                <h3 className="font-bold text-lg">BIT PATTERNS Assistant</h3>
-                <p className="text-xs opacity-80">Always here to help</p>
+                <div className="flex items-start gap-2">
+                  {message.sender === "bot" && <Bot size={18} className="mt-1 flex-shrink-0 text-blue-300" />}
+                  {message.sender === "user" && <User size={18} className="mt-1 flex-shrink-0 text-white" />}
+                  <p className="text-sm leading-relaxed">{message.text}</p>
+                </div>
+                <p className="text-xs opacity-60 mt-2">
+                  {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                </p>
               </div>
             </div>
+          ))}
+          <div ref={messagesEndRef} />
+        </div>
 
-            {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-900/50">
-              <AnimatePresence>
-                {messages.map((message) => (
-                  <motion.div
-                    key={message.id}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.3 }}
-                    className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
-                  >
-                    <div
-                      className={`max-w-[75%] p-3 rounded-xl ${
-                        message.sender === "user"
-                          ? "bg-blue-500 text-white"
-                          : "bg-gray-700 text-gray-100 border border-gray-600"
-                      } shadow-md`}
-                    >
-                      <div className="flex items-start gap-2">
-                        {message.sender === "bot" && <Bot size={18} className="mt-1 flex-shrink-0 text-blue-300" />}
-                        {message.sender === "user" && <User size={18} className="mt-1 flex-shrink-0 text-white" />}
-                        <p className="text-sm leading-relaxed">{message.text}</p>
-                      </div>
-                      <p className="text-xs opacity-60 mt-2">
-                        {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-              <div ref={messagesEndRef} />
-            </div>
-
-            {/* Input */}
-            <div className="p-4 border-t border-gray-700 bg-gray-800">
-              <div className="flex gap-2">
-                <Input
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Ask me anything..."
-                  className="bg-gray-900 border-gray-600 text-white focus:ring-2 focus:ring-blue-500 transition-all duration-200"
-                />
-                <Button
-                  onClick={handleSendMessage}
-                  size="icon"
-                  className="bg-blue-500 hover:bg-blue-600 text-white rounded-xl transition-all duration-200"
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <Send size={18} />
-                  </motion.div>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Input */}
+        <div className="p-4 border-t border-gray-700 bg-gray-800">
+          <div className="flex gap-2">
+            <Input
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Ask me anything..."
+              className="bg-gray-900 border-gray-600 text-white focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+            />
+            <Button
+              onClick={handleSendMessage}
+              size="icon"
+              className="send-button bg-blue-500 hover:bg-blue-600 text-white rounded-xl transition-all duration-200"
+            >
+              <Send size={18} />
+            </Button>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
