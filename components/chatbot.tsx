@@ -4,7 +4,7 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { X, Send, Bot, User } from "lucide-react"
+import { MessageCircle, X, Send, Bot, User } from "lucide-react"
 
 interface Message {
   id: number
@@ -56,7 +56,7 @@ export default function Chatbot() {
   const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
-8  // Auto-scroll to the latest message
+  // Auto-scroll to the latest message
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages, isTyping])
@@ -195,7 +195,7 @@ export default function Chatbot() {
           size="icon"
         >
           <span className="transition-transform duration-300" style={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
-            {isOpen ? <X size={28} /> : <Bot size={28} />}
+            {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
           </span>
         </Button>
       </div>
