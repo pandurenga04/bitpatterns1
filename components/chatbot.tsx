@@ -1,11 +1,11 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { MessageCircle, X, Send, Bot, User } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 interface Message {
   id: number
@@ -54,162 +54,132 @@ export default function Chatbot() {
     },
   ])
   const [inputValue, setInputValue] = useState("")
+  const messageEndRef = useRef<HTMLDivElement | null>(null)
 
-  const getResponse = (userMessage: string): string => {
-    const message = userMessage.toLowerCase()
+  const getResponse = (msg: string): string => {
+    const message = msg.toLowerCase()
+    if (["hello", "hi", "hey"].some((w) => message.includes(w))) return rand(predefinedResponses.greeting)
+    if (["service", "offerings", "what do you do"].some((w) => message.includes(w))) return rand(predefinedResponses.services)
+    if (["contact", "email", "phone", "reach"].some((w) => message.includes(w))) return rand(predefinedResponses.contact)
+    if (["price", "cost", "pricing", "quote"].some((w) => message.includes(w))) return rand(predefinedResponses.pricing)
+    if (["projects", "work", "products", "examples"].some((w) => message.includes(w))) return rand(predefinedResponses.portfolio)
+    if (["web development", "website"].some((w) => message.includes(w))) return "We specialize in full-stack web development using React, Next.js, and Node.js. Want to know more?"
+    if (["ai", "ml", "machine learning"].some((w) => message.includes(w))) return "We build custom AI/ML models, predictive analytics, and smart assistants. What solution do you need?"
+    if (["mobile", "app"].some((w) => message.includes(w))) return "We build cross-platform mobile apps for Android & iOS using React Native. Got an idea?"
+    if (["thanks", "thank"].some((w) => message.includes(w))) return "You're welcome! Let me know if there's anything else you’d like to explore."
 
-    if (message.includes("hello") || message.includes("hi") || message.includes("hey")) {
-      return predefinedResponses.greeting[Math.floor(Math.random() * predefinedResponses.greeting.length)]
-    }
-
-    if (message.includes("service") || message.includes("what do you do") || message.includes("offerings")) {
-      return predefinedResponses.services[Math.floor(Math.random() * predefinedResponses.services.length)]
-    }
-
-    if (
-      message.includes("contact") ||
-      message.includes("email") ||
-      message.includes("phone") ||
-      message.includes("reach")
-    ) {
-      return predefinedResponses.contact[Math.floor(Math.random() * predefinedResponses.contact.length)]
-    }
-
-    if (
-      message.includes("price") ||
-      message.includes("cost") ||
-      message.includes("pricing") ||
-      message.includes("quote")
-    ) {
-      return predefinedResponses.pricing[Math.floor(Math.random() * predefinedResponses.pricing.length)]
-    }
-
-    if (
-      message.includes("products") ||
-      message.includes("work") ||
-      message.includes("projects") ||
-      message.includes("examples")
-    ) {
-      return "You can view our products on the Products page to see our recent work including FinTech Dashboard, AI Chatbots, and E-commerce apps."
-    }
-
-    if (message.includes("web development") || message.includes("website")) {
-      return "We specialize in full-stack web development using modern frameworks like React, Next.js, and Node.js. Would you like to know more about our web development process?"
-    }
-
-    if (message.includes("ai") || message.includes("machine learning") || message.includes("ml")) {
-      return "Our AI/ML solutions include custom model development, chatbots, predictive analytics, and data visualization. What specific AI solution are you interested in?"
-    }
-
-    if (message.includes("mobile") || message.includes("app")) {
-      return "We develop cross-platform mobile applications for iOS and Android using React Native and native technologies. Do you have a mobile app project in mind?"
-    }
-
-    if (message.includes("thank") || message.includes("thanks")) {
-      return "You're welcome! Feel free to ask if you have any other questions about BIT PATTERNS."
-    }
-
-    const updatedDefaultResponses = {
-      ...predefinedResponses.default,
-      1: "Check out our Products section to see examples of our work in Web Development, AI/ML, and Mobile Apps.",
-    }
-
-    return predefinedResponses.default[Math.floor(Math.random() * predefinedResponses.default.length)]
+    return rand(predefinedResponses.default)
   }
+
+  const rand = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)]
 
   const handleSendMessage = () => {
     if (!inputValue.trim()) return
-
-    const userMessage: Message = {
+    const userMsg: Message = {
       id: messages.length + 1,
       text: inputValue,
       sender: "user",
       timestamp: new Date(),
     }
 
-    const botResponse: Message = {
+    const botMsg: Message = {
       id: messages.length + 2,
       text: getResponse(inputValue),
       sender: "bot",
       timestamp: new Date(),
     }
 
-    setMessages((prev) => [...prev, userMessage, botResponse])
+    setMessages((prev) => [...prev, userMsg, botMsg])
     setInputValue("")
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleSendMessage()
-    }
+    if (e.key === "Enter") handleSendMessage()
   }
+
+  useEffect(() => {
+    messageEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages])
 
   return (
     <>
-      {/* Chatbot Toggle Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg"
+          className="w-14 h-14 rounded-full bg-gradient-to-tr from-blue-600 to-purple-600 hover:opacity-90 text-white shadow-lg animate-pulse"
           size="icon"
         >
           {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
         </Button>
       </div>
 
-      {/* Chatbot Window */}
-      {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-96 bg-gray-900 border border-gray-700 rounded-lg shadow-xl z-50 flex flex-col">
-          {/* Header */}
-          <div className="bg-blue-600 text-white p-4 rounded-t-lg flex items-center gap-3">
-            <Bot size={24} />
-            <div>
-              <h3 className="font-semibold">BIT PATTERNS Assistant</h3>
-              <p className="text-xs opacity-90">Online now</p>
-            </div>
-          </div>
-
-          {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3">
-            {messages.map((message) => (
-              <div key={message.id} className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}>
-                <div
-                  className={`max-w-[80%] p-3 rounded-lg ${
-                    message.sender === "user"
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-800 text-gray-100 border border-gray-700"
-                  }`}
-                >
-                  <div className="flex items-start gap-2">
-                    {message.sender === "bot" && <Bot size={16} className="mt-1 flex-shrink-0" />}
-                    {message.sender === "user" && <User size={16} className="mt-1 flex-shrink-0" />}
-                    <p className="text-sm">{message.text}</p>
-                  </div>
-                  <p className="text-xs opacity-70 mt-1">
-                    {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-                  </p>
-                </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 50 }}
+            transition={{ duration: 0.3 }}
+            className="fixed bottom-24 right-6 w-80 h-96 bg-gray-900 border border-gray-700 rounded-lg shadow-2xl z-50 flex flex-col"
+          >
+            {/* Header */}
+            <div className="bg-blue-600 text-white p-4 rounded-t-lg flex items-center gap-3">
+              <Bot size={24} />
+              <div>
+                <h3 className="font-semibold">BIT PATTERNS Assistant</h3>
+                <p className="text-xs opacity-90">Online</p>
               </div>
-            ))}
-          </div>
-
-          {/* Input */}
-          <div className="p-4 border-t border-gray-700">
-            <div className="flex gap-2">
-              <Input
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Type your message..."
-                className="bg-gray-800 border-gray-600 text-white"
-              />
-              <Button onClick={handleSendMessage} size="icon" className="bg-blue-600 hover:bg-blue-700">
-                <Send size={16} />
-              </Button>
             </div>
-          </div>
-        </div>
-      )}
+
+            {/* Chat Area */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-3 scrollbar-thin scrollbar-thumb-gray-700">
+              {messages.map((msg) => (
+                <motion.div
+                  key={msg.id}
+                  initial={{ opacity: 0, x: msg.sender === "user" ? 30 : -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`max-w-[75%] p-3 rounded-lg ${
+                      msg.sender === "user"
+                        ? "bg-blue-600 text-white"
+                        : "bg-gray-800 text-gray-100 border border-gray-700"
+                    }`}
+                  >
+                    <div className="flex items-start gap-2">
+                      {msg.sender === "bot" && <Bot size={16} className="mt-1" />}
+                      {msg.sender === "user" && <User size={16} className="mt-1" />}
+                      <p className="text-sm">{msg.text}</p>
+                    </div>
+                    <p className="text-[10px] text-right opacity-60 mt-1">
+                      {msg.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+              <div ref={messageEndRef} />
+            </div>
+
+            {/* Input */}
+            <div className="p-3 border-t border-gray-700 bg-gray-800">
+              <div className="flex gap-2">
+                <Input
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Type your message..."
+                  className="bg-gray-700 border border-gray-600 text-white"
+                />
+                <Button onClick={handleSendMessage} size="icon" className="bg-blue-600 hover:bg-blue-700">
+                  <Send size={16} />
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
