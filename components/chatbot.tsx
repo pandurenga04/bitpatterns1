@@ -4,7 +4,7 @@ import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { MessageCircle, X, Send, Bot, User } from "lucide-react"
+import { X, Send, Bot, User } from "lucide-react"
 
 interface Message {
   id: number
@@ -53,12 +53,13 @@ export default function Chatbot() {
     },
   ])
   const [inputValue, setInputValue] = useState("")
+  const [isTyping, setIsTyping] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
-  // Auto-scroll to the latest message
+8  // Auto-scroll to the latest message
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }, [messages])
+  }, [messages, isTyping])
 
   const getResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase()
@@ -103,15 +104,20 @@ export default function Chatbot() {
       timestamp: new Date(),
     }
 
-    const botResponse: Message = {
-      id: messages.length + 2,
-      text: getResponse(inputValue),
-      sender: "bot",
-      timestamp: new Date(),
-    }
-
-    setMessages((prev) => [...prev, userMessage, botResponse])
+    setMessages((prev) => [...prev, userMessage])
+    setIsTyping(true)
     setInputValue("")
+
+    setTimeout(() => {
+      const botResponse: Message = {
+        id: messages.length + 2,
+        text: getResponse(inputValue),
+        sender: "bot",
+        timestamp: new Date(),
+      }
+      setMessages((prev) => [...prev, botResponse])
+      setIsTyping(false)
+    }, 1000) // 1-second delay for typing effect
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
@@ -153,6 +159,32 @@ export default function Chatbot() {
         .send-button:active {
           transform: scale(0.95);
         }
+        .typing-indicator {
+          display: flex;
+          gap: 6px;
+          padding: 10px;
+          background: #374151;
+          border-radius: 10px;
+          width: fit-content;
+        }
+        .typing-dot {
+          width: 6px;
+          height: 6px;
+          background: #60a5fa;
+          border-radius: 50%;
+          animation: blink 1.4s infinite both;
+        }
+        .typing-dot:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        .typing-dot:nth-child(3) {
+          animation-delay: 0.4s;
+        }
+        @keyframes blink {
+          0% { opacity: 0.2; }
+          20% { opacity: 1; }
+          100% { opacity: 0.2; }
+        }
       `}</style>
 
       {/* Chatbot Toggle Button */}
@@ -163,7 +195,7 @@ export default function Chatbot() {
           size="icon"
         >
           <span className="transition-transform duration-300" style={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
-            {isOpen ? <X size={28} /> : <MessageCircle size={28} />}
+            {isOpen ? <X size={28} /> : <Bot size={28} />}
           </span>
         </Button>
       </div>
@@ -206,6 +238,15 @@ export default function Chatbot() {
               </div>
             </div>
           ))}
+          {isTyping && (
+            <div className="flex justify-start">
+              <div className="typing-indicator">
+                <span className="typing-dot"></span>
+                <span className="typing-dot"></span>
+                <span className="typing-dot"></span>
+              </div>
+            </div>
+          )}
           <div ref={messagesEndRef} />
         </div>
 
