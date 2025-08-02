@@ -51,7 +51,7 @@ const products = [
     description:
       "A livestocks listing and management platform the users can able to sell or buy a cow using this Platform.",
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQFTzIuZEM1HHg/feedshare-shrink_2048_1536/B56ZcqDQ.YGQAo-/0/1748757192213?e=1756944000&v=beta&t=B0lsD0414Dr_s7hpV27ULKJY_pWXLEXGC41nPpdBaxI",
+      "https://media.licdn.com/dms/image/v2/D5622AQHdz6Ecp3nx7g/feedshare-shrink_2048_1536/B56ZfkwgMUHUAo-/0/1751889612182?e=1756944000&v=beta&t=SqlfMQ7I-BMfuyVoZXsz2Y5gTe8xWzqFMzcybf0RAB0",
     category: "Web Development",
     technologies: ["Next.js", "Three.js", "Supabase", "Tailwind CSS"],
   },
