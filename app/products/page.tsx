@@ -8,32 +8,32 @@ import { ArrowRight, ExternalLink } from "lucide-react"
 const products = [
   {
     id: 1,
-    title: "FinTech Dashboard",
+    title: "MediVault- AI Powered Medical Intellingence",
     description:
-      "A comprehensive financial analytics dashboard with real-time data visualization and predictive insights.",
+      "Smarter patient record management & AI dashboard with real-time data visualization and predictive insights.",
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-    category: "Web Development",
-    technologies: ["React", "Node.js", "D3.js", "MongoDB"],
+      "https://media.licdn.com/dms/image/v2/D5622AQGzBzHGeDwHTQ/feedshare-shrink_1280/B56Zhl_i8MG4Ak-/0/1754057816786?e=1756944000&v=beta&t=AAYl_jfFS-5Ingnw4p17Le7RBjoPioOUDjCDDNvvkis",
+    category: "AI & Web Based",
+    technologies: ["React", "Node.js", "Next.js", "GenAI"],
   },
   {
     id: 2,
-    title: "AI-Powered Chatbot",
+    title: "MomEase -𝑨𝑰-𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝑪𝒐𝒎𝒑𝒂𝒏𝒊𝒐𝒏 𝒇𝒐𝒓 𝑴𝒐𝒕𝒉𝒆𝒓𝒉𝒐𝒐𝒅",
     description:
-      "An intelligent customer service chatbot with natural language processing capabilities for a major retail chain.",
-    image: "https://aunoa.ai/wp-content/uploads/2024/05/tipos-de-chatbots.webp",
+      " comprehensive digital platform designed specifically for new mothers navigating their journey with confidence and support",
+    image: "https://media.licdn.com/dms/image/v2/D5622AQG3y9SDROvoyA/feedshare-shrink_2048_1536/B56ZehEErGHQAs-/0/1750753890747?e=1756944000&v=beta&t=TeMaSdm1DO9Eo55hcE4QDq0uzzwYGqHqGV_3XY4OQFA",
     category: "AI/ML Solutions",
     technologies: ["Python", "TensorFlow", "NLP", "React"],
   },
   {
     id: 3,
-    title: "E-Commerce Mobile App For Super-store",
+    title: "Namma Kart",
     description:
       "A cross-platform mobile application for an e-commerce business with personalized recommendations and secure payments.",
     image:
-      "https://images.unsplash.com/photo-1601972599720-36938d4ecd31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2187&q=80",
+      "https://media.licdn.com/dms/image/v2/D5622AQFTzIuZEM1HHg/feedshare-shrink_2048_1536/B56ZcqDQ.YGQAo-/0/1748757192213?e=1756944000&v=beta&t=B0lsD0414Dr_s7hpV27ULKJY_pWXLEXGC41nPpdBaxI",
     category: "Mobile App Development",
-    technologies: ["React Native", "Firebase", "Stripe", "Redux"],
+    technologies: ["React Native", "Firebase", "RazorPay", "Redux"],
   },
   {
     id: 4,
@@ -47,11 +47,11 @@ const products = [
   },
   {
     id: 5,
-    title: "Cattle Web Marketplace",
+    title: "Moo Mart",
     description:
       "A livestocks listing and management platform the users can able to sell or buy a cow using this Platform.",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      "https://media.licdn.com/dms/image/v2/D5622AQFTzIuZEM1HHg/feedshare-shrink_2048_1536/B56ZcqDQ.YGQAo-/0/1748757192213?e=1756944000&v=beta&t=B0lsD0414Dr_s7hpV27ULKJY_pWXLEXGC41nPpdBaxI",
     category: "Web Development",
     technologies: ["Next.js", "Three.js", "Supabase", "Tailwind CSS"],
   },
