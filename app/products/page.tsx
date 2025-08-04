@@ -27,7 +27,7 @@ const products = [
   },
   {
     id: 3,
-    title: "Namma Kart",
+    title: "Namma Kart -A cross-platform mobile application for an e-commerce",
     description:
       "A cross-platform mobile application for an e-commerce business with personalized recommendations and secure payments.",
     image:
