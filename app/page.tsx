@@ -7,31 +7,27 @@ import HeroAnimation from "@/components/hero-animation"
 import TypewriterEffect from "@/components/typewriter-effect"
 import ServiceCard from "@/components/service-card"
 import SectionHeading from "@/components/section-heading"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel"
 import { Code2, Brain, Smartphone, Database, ArrowRight, CheckCircle2, Users, Zap, Clock, Award } from "lucide-react"
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
 
 export default function Home() {
   const handleGetStarted = () => {
     window.location.href =
       "mailto:bitpatterns.official@gmail.com?subject=Project Inquiry&body=Hello BIT PATTERNS team, I'm interested in discussing a project with you."
   }
-
-  const [sliderRef] = useKeenSlider({
-    loop: true,
-    mode: "snap",
-    slides: { perView: 1, spacing: 15 },
-    breakpoints: {
-      "(min-width: 640px)": { slides: { perView: 2, spacing: 15 } },
-      "(min-width: 1024px)": { slides: { perView: 4, spacing: 15 } },
-    },
-  })
-
   const deliveryImages = [
-    "/bp1.jpg",
-    "/bp2.jpg",
-    "/bp3.jpg",
-    "/bp4.jpg",
+    {
+      src: "/bp1.jpg",
+    },
+    {
+      src: "/bp2.jpg",
+    },
+    {
+      src: "/bp3.jpg",
+    },
+    {
+      src: "/bp4.jpg",
+    },
   ]
 
   return (
@@ -39,11 +35,14 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <HeroAnimation />
+
+        {/* Watermark Logo Background */}
         <div className="absolute inset-0 flex items-center justify-center z-0">
           <div className="relative w-80 h-80 md:w-[500px] md:h-[500px] opacity-15">
             <Image src="/bitpatterns-logo.png" alt="BIT PATTERNS Watermark" fill className="object-contain" priority />
           </div>
         </div>
+
         <div className="container mx-auto px-4 z-10 text-center relative">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
             Transforming Ideas Into <br />
@@ -74,6 +73,7 @@ export default function Home() {
             title="Our Services"
             subtitle="We offer a comprehensive range of digital solutions to help your business thrive in the digital landscape."
           />
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ServiceCard
               title="Web Development"
@@ -100,6 +100,7 @@ export default function Home() {
               glowColor="blue"
             />
           </div>
+
           <div className="text-center mt-12">
             <Button variant="outline" className="border-blue-500 text-white hover:bg-blue-500/20" asChild>
               <Link href="/services" className="flex items-center gap-2">
@@ -117,6 +118,7 @@ export default function Home() {
             title="Why Choose BIT PATTERNS"
             subtitle="We combine technical expertise with creative problem-solving to deliver exceptional digital solutions."
           />
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-gray-900/30 p-6 rounded-lg border border-gray-800">
               <CheckCircle2 className="text-blue-500 mb-4" size={32} />
@@ -125,6 +127,7 @@ export default function Home() {
                 Our team of expert developers ensures high-quality code and optimal performance.
               </p>
             </div>
+
             <div className="bg-gray-900/30 p-6 rounded-lg border border-gray-800">
               <Users className="text-violet-500 mb-4" size={32} />
               <h3 className="text-xl font-bold mb-2">Client-Focused Approach</h3>
@@ -132,6 +135,7 @@ export default function Home() {
                 We prioritize your needs and work closely with you throughout the development process.
               </p>
             </div>
+
             <div className="bg-gray-900/30 p-6 rounded-lg border border-gray-800">
               <Zap className="text-green-500 mb-4" size={32} />
               <h3 className="text-xl font-bold mb-2">Innovative Solutions</h3>
@@ -139,6 +143,7 @@ export default function Home() {
                 We leverage cutting-edge technologies to create forward-thinking digital products.
               </p>
             </div>
+
             <div className="bg-gray-900/30 p-6 rounded-lg border border-gray-800">
               <Clock className="text-blue-500 mb-4" size={32} />
               <h3 className="text-xl font-bold mb-2">Timely Delivery</h3>
@@ -146,6 +151,7 @@ export default function Home() {
                 We adhere to project timelines and ensure on-time delivery without compromising quality.
               </p>
             </div>
+
             <div className="bg-gray-900/30 p-6 rounded-lg border border-gray-800">
               <Award className="text-violet-500 mb-4" size={32} />
               <h3 className="text-xl font-bold mb-2">Quality Assurance</h3>
@@ -153,6 +159,7 @@ export default function Home() {
                 Rigorous testing and quality control processes ensure a flawless end product.
               </p>
             </div>
+
             <div className="bg-gray-900/30 p-6 rounded-lg border border-gray-800">
               <Database className="text-green-500 mb-4" size={32} />
               <h3 className="text-xl font-bold mb-2">Scalable Architecture</h3>
@@ -163,22 +170,57 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Client Product Delivery */}
+      <section className="py-20 bg-gradient-to-b from-[#050b2c] to-gray-900">
+        <div className="container mx-auto px-4">
+          <SectionHeading
+            title="Client Product Delivery"
+            subtitle="Showcasing our successful project deliveries and the innovative solutions we've built for our clients."
+          />
 
-      {/* Client Product Delivery Carousel */}
-      <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">Client Product Deliveries</h2>
-          <div ref={sliderRef} className="keen-slider">
-            {deliveryImages.map((src, index) => (
-              <div key={index} className="keen-slider__slide flex justify-center">
-                <div className="relative w-72 h-48 rounded-lg overflow-hidden shadow-lg">
-                  <Image src={src} alt={`Delivery ${index + 1}`} fill className="object-cover" />
-                </div>
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {deliveryImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="bg-gray-900/50 border border-gray-700 rounded-lg overflow-hidden">
+                      <div className="relative h-64 md:h-80">
+                        <Image
+                          src={image.src || "/placeholder.svg"}
+                          alt={image.alt}
+                          fill
+                          className="object-cover"
+                          priority={index === 0}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-6">
+                          <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{image.title}</h3>
+                          <p className="text-gray-300 text-sm md:text-base">{image.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-4 bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700" />
+              <CarouselNext className="right-4 bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700" />
+            </Carousel>
+
+            <div className="text-center mt-8">
+              <Button
+                variant="outline"
+                className="border-blue-500 text-white hover:bg-blue-500/20 bg-transparent"
+                asChild
+              >
+                <Link href="/portfolio" className="flex items-center gap-2">
+                  View Full Portfolio <ArrowRight size={16} />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
+
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-[#050b2c]">
