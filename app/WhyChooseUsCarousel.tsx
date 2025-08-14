@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
           spaceBetween={20}
           slidesPerView={1}
           loop={true}
-          speed={2000} // Smooth slide speed
+          speed={1000} // Smooth slide speed
           autoplay={{
             delay: 0, // No pause, continuous movement
             disableOnInteraction: false,
