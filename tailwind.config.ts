@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        myfont: ["MyFont", "sans-serif"],
+        myfont1:["MyFont1","sans-serif"], // 'myfont' is the class name you'll use
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
