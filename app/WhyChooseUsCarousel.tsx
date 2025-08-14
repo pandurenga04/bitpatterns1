@@ -20,7 +20,7 @@ export default function WhyChooseUs() {
     },
     {
       img: "/bp3.jpg",
-      title: "Innovative Solutions",
+      title: "Expert Teams",
       desc: "We leverage cutting-edge technologies to create forward-thinking digital products.",
     },
     {
@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
           spaceBetween={20}
           slidesPerView={1}
           loop={true}
-          speed={3000} // Smooth slide speed
+          speed={1000} // Smooth slide speed
           autoplay={{
             delay: 0, // No pause, continuous movement
             disableOnInteraction: false,
