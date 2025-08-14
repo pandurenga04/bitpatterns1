@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import HeroAnimation from "@/components/hero-animation"
-import TypewriterEffect from "@/components/typewriter-effect"
+import TypewriterEffect from "@/components/typewriter-effect" 
 import ServiceCard from "@/components/service-card"
 import SectionHeading from "@/components/section-heading"
 import WhyChooseUsCarousel from "@/app/WhyChooseUsCarousel";
