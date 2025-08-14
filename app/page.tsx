@@ -6,6 +6,7 @@ import HeroAnimation from "@/components/hero-animation"
 import TypewriterEffect from "@/components/typewriter-effect"
 import ServiceCard from "@/components/service-card"
 import SectionHeading from "@/components/section-heading"
+import WhyChooseUsCarousel from "@/app/WhyChooseUsCarousel";
 import { Code2, Brain, Smartphone, Database, ArrowRight, CheckCircle2, Users, Zap, Clock, Award } from "lucide-react"
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
           </div>
         </div>
         <div className="container mx-auto px-4 z-10 text-center relative">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+          <h1 className="text-4xl md:text-6xl font-bold  mb-6 text-white">
             Transforming Ideas Into <br />
             <span className="gradient-text">Software Realities</span>
           </h1>
@@ -64,6 +65,7 @@ export default function Home() {
         </div>
       </section>
 
+      
       {/* Why Choose Us */}
       <section className="py-20 bg-[#050b2c] relative">
         <div className="container mx-auto px-4 relative z-10">
@@ -102,7 +104,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <WhyChooseUsCarousel/>
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-[#050b2c]">
         <div className="container mx-auto px-4">
