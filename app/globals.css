@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* globals.css */
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/scrollbar";
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -106,3 +111,18 @@ body {
 .animate-blink {
   animation: blink 1s step-end infinite;
 }
+
+/* globals.css */
+@font-face {
+  font-family: "MyFont";
+  src: url("/fonts/RintBasicItalic-1jjL2.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyFont1";
+  src: url("/fonts/ShackleRegular-ALvV7.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
