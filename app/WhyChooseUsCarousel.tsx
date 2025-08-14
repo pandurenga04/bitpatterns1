@@ -9,12 +9,12 @@ import "swiper/css/pagination";
 export default function WhyChooseUs() {
   const items = [
     {
-      img: "/bp1.jpg",
+      img: "/bp2.jpg",
       title: "Technical Excellence",
       desc: "Our team of expert developers ensures high-quality code and optimal performance.",
     },
     {
-      img: "/bp2.jpg",
+      img: "/bp1.jpg",
       title: "Client-Focused Approach",
       desc: "We prioritize your needs and work closely with you throughout the development process.",
     },
