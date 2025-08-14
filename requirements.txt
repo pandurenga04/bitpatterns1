@@ -40,6 +40,10 @@ three@0.158.0
 @react-three/drei@9.88.13
 @types/three@0.158.0
 
+# Sliders and Carousels
+swiper@11.1.0
+
+
 # Icons and Assets
 lucide-react@0.294.0
 @heroicons/react@2.0.18
