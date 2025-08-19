@@ -42,12 +42,12 @@ export default function WhyChooseUs() {
           spaceBetween={20}
           slidesPerView={1}
           loop={true}
-          speed={1000} // Smooth slide speed
+          speed={1200} // smooth transition speed
           autoplay={{
-            delay: 0, // No pause, continuous movement
+            delay: 2500, // slide every 2.5s (smooth + no freeze)
             disableOnInteraction: false,
           }}
-          freeMode={true} // Makes it continuous without snapping
+          pagination={{ clickable: true }}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
         >
           {items.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gray-900/30 rounded-lg border border-gray-800 h-full overflow-hidden">
+              <div className="bg-gray-900/30 rounded-lg border border-gray-800 h-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <Image
                   src={item.img}
                   alt={item.title}
