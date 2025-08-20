@@ -172,59 +172,58 @@ Product Reference: ${product.title}
         </div>
       </section>
 
-      {/* Featured Product */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-        <div className="container mx-auto px-4">
-          <SectionHeading title="Featured Product" subtitle="A closer look at one of our most impactful products." />
+{/* Featured Product */}
+<section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+  <div className="container mx-auto px-4">
+    <SectionHeading title="Featured Product" subtitle="Revolutionizing healthcare data management with AI." />
 
-          <div className="bg-gradient-to-r from-blue-900/20 to-violet-900/20 border border-gray-800 rounded-lg overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="relative h-64 lg:h-auto">
-                <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80"
-                  alt="FinTech Dashboard"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
-              </div>
-              <div className="p-8">
-                <span className="inline-block px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium mb-4">
-                  Web Development & AI
-                </span>
-                <h3 className="text-2xl font-bold mb-4">FinTech Dashboard: Transforming Financial Analytics</h3>
-                <p className="text-gray-300 mb-6">
-                  We partnered with a leading financial services company to develop a comprehensive analytics dashboard
-                  that revolutionized how they process and visualize data. The solution included real-time monitoring,
-                  predictive analytics, and customizable reporting features.
-                </p>
+    <div className="bg-gradient-to-r from-emerald-900/20 to-teal-900/20 border border-gray-800 rounded-lg overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative h-64 lg:h-auto">
+          <Image
+            src="https://images.unsplash.com/photo-1581092795360-fd1ca04f1f5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80"
+            alt="MediVault AI "
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            priority
+          />
+        </div>
+        <div className="p-8">
+          <span className="inline-block px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-sm font-medium mb-4">
+            Healthcare & AI
+          </span>
+          <h3 className="text-2xl font-bold mb-4">MediVault AI: Secure Healthcare Data Intelligence</h3>
+          <p className="text-gray-300 mb-6">
+            MediVault AI empowers hospitals and healthcare providers with a secure, AI-driven platform to manage patient records, detect anomalies, and generate predictive health insights while ensuring compliance with medical data standards.
+          </p>
 
-                <div className="space-y-4 mb-6">
-                  <div>
-                    <h4 className="font-semibold">The Challenge</h4>
-                    <p className="text-gray-400">
-                      The client needed to consolidate data from multiple sources and provide actionable insights to
-                      their team and customers in real-time.
-                    </p>
-                  </div>
+          <div className="space-y-4 mb-6">
+            <div>
+              <h4 className="font-semibold">The Challenge</h4>
+              <p className="text-gray-400">
+                Healthcare organizations face difficulties managing massive volumes of patient data securely while extracting actionable insights for doctors and patients.
+              </p>
+            </div>
 
-                  <div>
-                    <h4 className="font-semibold">Our Solution</h4>
-                    <p className="text-gray-400">
-                      We developed a scalable platform with intuitive data visualization, AI-powered predictions, and a
-                      responsive interface accessible across all devices.
-                    </p>
-                  </div>
+            <div>
+              <h4 className="font-semibold">Our Solution</h4>
+              <p className="text-gray-400">
+                MediVault AI integrates advanced encryption, AI-powered anomaly detection, and predictive analytics to deliver a scalable and intuitive healthcare data platform.
+              </p>
+            </div>
 
-                  <div>
-                    <h4 className="font-semibold">Results</h4>
-                    <p className="text-gray-400">
-                      The solution led to a 40% increase in operational efficiency, 25% reduction in decision-making
-                      time, and significant improvement in customer satisfaction.
-                    </p>
-                  </div>
-                </div>
+            <div>
+              <h4 className="font-semibold">Results</h4>
+              <p className="text-gray-400">
+                Improved diagnostic accuracy by 30%, reduced administrative workload by 45%, and enhanced patient trust with industry-grade data security.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
                 <Button
                   className="bg-blue-600 hover:bg-blue-700 text-white"
