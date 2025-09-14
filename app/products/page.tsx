@@ -12,7 +12,7 @@ const products = [
     description:
       "Smarter patient record management & AI dashboard with real-time data visualization and predictive insights.",
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQGzBzHGeDwHTQ/feedshare-shrink_1280/B56Zhl_i8MG4Ak-/0/1754057816786?e=1756944000&v=beta&t=AAYl_jfFS-5Ingnw4p17Le7RBjoPioOUDjCDDNvvkis",
+      "https://d.techtimes.com/en/full/457417/how-artificial-intelligence-quietly-reshaping-medicine.jpg?w=1600&h=900&q=88&f=7d5f47dd3ce7818c908521ce2acb6da4",
     category: "AI & Web Based",
     technologies: ["React", "Node.js", "Next.js", "GenAI"],
   },
@@ -21,7 +21,7 @@ const products = [
     title: "MomEase -𝑨𝑰-𝑷𝒐𝒘𝒆𝒓𝒆𝒅 𝑪𝒐𝒎𝒑𝒂𝒏𝒊𝒐𝒏 𝒇𝒐𝒓 𝑴𝒐𝒕𝒉𝒆𝒓𝒉𝒐𝒐𝒅",
     description:
       " comprehensive digital platform designed specifically for new mothers navigating their journey with confidence and support",
-    image: "https://media.licdn.com/dms/image/v2/D5622AQG3y9SDROvoyA/feedshare-shrink_2048_1536/B56ZehEErGHQAs-/0/1750753890747?e=1756944000&v=beta&t=TeMaSdm1DO9Eo55hcE4QDq0uzzwYGqHqGV_3XY4OQFA",
+    image: "https://substackcdn.com/image/fetch/$s_!0tAf!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F613dc349-a536-4426-846b-e8bf8787be85_1024x608.jpeg",
     category: "AI/ML Solutions",
     technologies: ["Python", "TensorFlow", "NLP", "React"],
   },
@@ -31,7 +31,7 @@ const products = [
     description:
       "A cross-platform mobile application for an e-commerce business with personalized recommendations and secure payments.",
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQFTzIuZEM1HHg/feedshare-shrink_2048_1536/B56ZcqDQ.YGQAo-/0/1748757192213?e=1756944000&v=beta&t=B0lsD0414Dr_s7hpV27ULKJY_pWXLEXGC41nPpdBaxI",
+      "https://aartisto.com/wp-content/uploads/2023/06/E-commerce-App-930x563.jpg",
     category: "Mobile App Development",
     technologies: ["React Native", "Firebase", "RazorPay", "Redux"],
   },
@@ -51,7 +51,7 @@ const products = [
     description:
       "A livestocks listing and management platform the users can able to sell or buy a cow using this Platform.",
     image:
-      "https://media.licdn.com/dms/image/v2/D5622AQHdz6Ecp3nx7g/feedshare-shrink_2048_1536/B56ZfkwgMUHUAo-/0/1751889612182?e=1756944000&v=beta&t=SqlfMQ7I-BMfuyVoZXsz2Y5gTe8xWzqFMzcybf0RAB0",
+      "https://circuitdigest.com/sites/default/files/field/image/IoT-in-Cattle-monitoring-industry.jpg",
     category: "Web Development",
     technologies: ["Next.js", "Three.js", "Supabase", "Tailwind CSS"],
   },
