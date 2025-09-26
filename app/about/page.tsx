@@ -149,13 +149,13 @@ export default function AboutPage() {
                 name: "Palani Murugan",
                 role: "Founder",
                 image:
-                  "https://media.licdn.com/dms/image/v2/D5603AQGHHcDCYYfGww/profile-displayphoto-shrink_400_400/B56ZTk.4rvGoAg-/0/1739008478715?e=1758153600&v=beta&t=Q8uuM_6MxMfgwiZ5XCZrkeqf5uvnweh2UDBctEtNIks",
+                  "https://media.licdn.com/dms/image/v2/D5603AQGHHcDCYYfGww/profile-displayphoto-shrink_800_800/B56ZTk.4rvGoAc-/0/1739008478715?e=1761782400&v=beta&t=u8OQNw0Ycaj5d8dlhWmj-OeWteD2DdtybjUEkgmbtC8",
               },
               {
                 name: "Neeleshwar",
                 role: "Co-Founder & Tech Head",
                 image:
-                  "https://media.licdn.com/dms/image/v2/D5603AQFLsgDh9pnmsg/profile-displayphoto-shrink_400_400/B56ZUJNg8lGUAg-/0/1739616297998?e=1758153600&v=beta&t=65RZj_MHX37aIxfFyyhF0DPob62fi4g1Uuc1W2a8m4s",
+                  "https://media.licdn.com/dms/image/v2/D5603AQFLsgDh9pnmsg/profile-displayphoto-shrink_800_800/B56ZUJNg8lGUAc-/0/1739616298047?e=1761782400&v=beta&t=dXg4b2s5UF9DH6QCqJlI4oG9eDbFR31infnCI3u1ZU4",
               },
             ].map((member, index) => (
               <div
