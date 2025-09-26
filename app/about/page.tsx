@@ -138,7 +138,7 @@ export default function AboutPage() {
                 name: "Pandurenga",
                 role: "Founder",
                 image:
-                  "https://media.licdn.com/dms/image/v2/D5603AQEHIpYgO_1K2A/profile-displayphoto-shrink_400_400/B56ZadjPqbHsAg-/0/1746399992410?e=1758153600&v=beta&t=kiXfF5Cq0HaljE5KCKqVLthERMwPRr_ajDEmGnheas0",
+                  "/1740814015063.png",
               },
               {
                 name: "Ranjith Kumar",
