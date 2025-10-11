@@ -136,24 +136,24 @@ export default function AboutPage() {
             {[
               {
                 name: "Pandurenga",
-                role: "Founder",
+                role: "Founder & COO",
                 image:
-                  "https://media.licdn.com/dms/image/v2/D5603AQFWBFvBsj10XQ/profile-displayphoto-crop_800_800/B56ZmPJCLDJsAI-/0/1759043135714?e=1762387200&v=beta&t=CTTFuIuGQB2q-wPHqZsyvSKR3JBEDyyHqMIrRmeA2X0",
+                  "https://media.licdn.com/dms/image/v2/D5603AQHnEQQoC1gX2Q/profile-displayphoto-crop_800_800/B56ZnGjyZFKIAI-/0/1759972895459?e=1762992000&v=beta&t=6pvhUfIEeR78qah4Eq9QM2QbzDMZEGotyOaZRwO3ZQg",
               },
               {
                 name: "Ranjith Kumar",
-                role: "Founder",
+                role: "Founder & CFO",
                 image: "/ranjith-kumar.png",
               },
               {
                 name: "Palani Murugan",
-                role: "Founder",
+                role: "Founder & CTO",
                 image:
                   "https://media.licdn.com/dms/image/v2/D5603AQGHHcDCYYfGww/profile-displayphoto-shrink_800_800/B56ZTk.4rvGoAc-/0/1739008478715?e=1761782400&v=beta&t=u8OQNw0Ycaj5d8dlhWmj-OeWteD2DdtybjUEkgmbtC8",
               },
               {
                 name: "Neeleshwar",
-                role: "Co-Founder & Tech Head",
+                role: "Tech Head & HR",
                 image:
                   "https://media.licdn.com/dms/image/v2/D5603AQFLsgDh9pnmsg/profile-displayphoto-shrink_800_800/B56ZUJNg8lGUAc-/0/1739616298047?e=1761782400&v=beta&t=dXg4b2s5UF9DH6QCqJlI4oG9eDbFR31infnCI3u1ZU4",
               },
