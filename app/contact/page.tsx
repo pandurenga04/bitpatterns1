@@ -122,7 +122,7 @@ Submission Date: ${new Date().toLocaleDateString()}
                     <h3 className="text-xl font-bold mb-1">Email Us</h3>
                     <p className="text-gray-300 mb-1">For general inquiries:</p>
                     <a
-                      href="mailto:info@bitpattern.com"
+                      href="mailto:bitpatterns.official@gmail.com"
                       className="text-blue-400 hover:text-blue-300 transition-colors"
                     >
                       bitpatterns.official@gmail.com
@@ -271,6 +271,7 @@ Submission Date: ${new Date().toLocaleDateString()}
                             <SelectItem value="ai-ml">AI/ML Solutions</SelectItem>
                             <SelectItem value="mobile-app">Mobile App Development</SelectItem>
                             <SelectItem value="custom-software">Custom Software</SelectItem>
+                            <SelectItem value="custom-software">Hackathon-Sponserships</SelectItem>
                             <SelectItem value="other">Other</SelectItem>
                           </SelectContent>
                         </Select>
