@@ -271,7 +271,7 @@ Submission Date: ${new Date().toLocaleDateString()}
                             <SelectItem value="ai-ml">AI/ML Solutions</SelectItem>
                             <SelectItem value="mobile-app">Mobile App Development</SelectItem>
                             <SelectItem value="custom-software">Custom Software</SelectItem>
-                            <SelectItem value="custom-software">Hackathon-Sponserships</SelectItem>
+                            <SelectItem value="sponserships">Hackathon-Sponserships</SelectItem>
                             <SelectItem value="other">Other</SelectItem>
                           </SelectContent>
                         </Select>
