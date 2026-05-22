@@ -297,7 +297,7 @@ Date: ${new Date().toLocaleDateString()}
                 quote:
                   "BIT PATTERNS delivered an exceptional solution that exceeded our expectations. Their technical expertise and attention to detail were impressive.",
                 image:
-                  "https://pnghq.com/wp-content/uploads/pnghq.com-user-icon-cutout-png-clipart-images.png",
+                  "https://img.magnific.com/premium-vector/wavy-hair-caucasian-man-relaxed-standing-2d-vector-avatar-illustration-cheerful-western-european-male-cartoon-character-face-confident-headshot-posing-flat-color-user-profile-image-isolated-white_151150-21132.jpg?semt=ais_hybrid&w=740&q=80",
               },
               {
                 name: "Mr.Kannan",
@@ -305,15 +305,15 @@ Date: ${new Date().toLocaleDateString()}
                 quote:
                   "Bit Patterns transformed our vision into a stunning digital reality with unmatched precision and creativity!.",
                 image:
-                  "https://pnghq.com/wp-content/uploads/pnghq.com-user-icon-cutout-png-clipart-images.png",
+                  "https://img.freepik.com/premium-vector/eyeglasses-asian-elderly-man-2d-vector-avatar-illustration-korean-senior-man-cartoon-character-face-japanese-old-male-portrait-middleaged-person-flat-color-user-profile-image-isolated-white_151150-19625.jpg",
               },
               {
-                name: "Mrs.Sundhari",
-                position: "Manager, SSF Mills",
+                name: "Mr.S.Senthil",
+                position: "Business Head, Sri Durgai Eswari Constructions",
                 quote:
-                  "Partnering with Bit Patterns has streamlined our operations and elevated our digital strategy beyond expectations.",
+                  "Good quality of work and very good clarity in execution towards the commitment.",
                 image:
-                  "https://www.clker.com/cliparts/D/4/B/O/k/2/female-user-icon-bright-blue-md.png",
+                  "https://sdeconstructions.com/_next/image?url=%2Ffounders%2Fsenthil.jpeg&w=1920&q=75",
               },
             ].map((testimonial, index) => (
               <div key={index} className="bg-gray-900/30 border border-gray-800 rounded-lg p-6">
